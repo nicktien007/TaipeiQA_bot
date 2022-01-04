@@ -1,0 +1,2 @@
+Django==3.2.11
+line-bot-sdk==2.0.1
