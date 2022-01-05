@@ -1,1 +1,1 @@
-web: gunicorn TaipeiQA_bot.wsgi
+web: gunicorn taipeiqa_bot.wsgi

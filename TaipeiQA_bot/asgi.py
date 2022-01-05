@@ -1,5 +1,5 @@
 """
-ASGI config for TaipeiQA_bot project.
+ASGI config for taipeiqa_bot project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'TaipeiQA_bot.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'taipeiqa_bot.settings')
 
 application = get_asgi_application()
