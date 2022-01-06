@@ -23,6 +23,7 @@ def query(payload):
     response = requests.post(API_URL, headers=headers, json=payload)
     print("query res:")
     print(response)
+    print(response.json())
     return response.json()
 
 @csrf_exempt
