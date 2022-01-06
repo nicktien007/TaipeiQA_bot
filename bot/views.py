@@ -24,6 +24,7 @@ headers = {"Authorization": settings.AUTH_TOKEN}
 def query(payload):
     retry_strategy = Retry(
         total=3,
+        backoff_factor=1,
         status_forcelist=[429, 500, 502, 503, 504],
         method_whitelist=["HEAD", "GET", "OPTIONS", "POST"]
     )
