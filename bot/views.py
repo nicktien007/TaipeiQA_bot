@@ -12,6 +12,7 @@ from linebot.models import MessageEvent, TextSendMessage
 
 import requests
 import pandas as pd
+from requests.adapters import HTTPAdapter, Retry
 
 line_bot_api = LineBotApi(settings.LINE_CHANNEL_ACCESS_TOKEN)
 parser = WebhookParser(settings.LINE_CHANNEL_SECRET)
@@ -20,10 +21,14 @@ headers = {"Authorization": settings.AUTH_TOKEN}
 
 
 def query(payload):
-    response = requests.post(API_URL, headers=headers, json=payload)
-    print("query res:")
-    print(response)
-    print(response.json())
+    s = requests.Session()
+    s.mount('https://', HTTPAdapter(max_retries=Retry(total=5, method_whitelist=frozenset(['GET', 'POST']))))
+    response = s.post(API_URL, headers=headers, json=payload,)
+
+    # response = requests.post(API_URL, headers=headers, json=payload, timeout=20)
+    # print("query res:")
+    # print(response)
+    # print(response.json())
     return response.json()
 
 @csrf_exempt
