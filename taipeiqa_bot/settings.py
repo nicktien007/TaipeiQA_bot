@@ -125,7 +125,10 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Channel access token
 LINE_CHANNEL_ACCESS_TOKEN = "OlvX+nzFhoqkfxaNd92w6AT3qwJV/nwDrF6zeZn2oydBcQJxEJYY9aVTWkBKy9fgJZ2YClHxSCaKnCn3oMMuwdP/0vSxgJM2SHGczV1BYUPU8Es7MsGDfxkKsPhruntQdEJP0yafgAuKkqa7nF+ixgdB04t89/1O/w1cDnyilFU="
+
+# Channel secret
 LINE_CHANNEL_SECRET = "cab4692d25afb44b2313e57b4fbf1265"
 
 TAIPEI_QA_API_URL = "https://api-inference.huggingface.co/models/nicktien/TaipeiQA_v1"

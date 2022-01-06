@@ -13,18 +13,20 @@ from linebot.models import MessageEvent, TextSendMessage
 import requests
 import pandas as pd
 
-# 這邊是Linebot的授權TOKEN(等等註冊LineDeveloper帳號會取得)，我們為DEMO方便暫時存在settings裡面存取，實際上使用的時候記得設成環境變數，不要公開在程式碼裡喔！
 line_bot_api = LineBotApi(settings.LINE_CHANNEL_ACCESS_TOKEN)
 parser = WebhookParser(settings.LINE_CHANNEL_SECRET)
 API_URL = settings.TAIPEI_QA_API_URL
 headers = {"Authorization": settings.AUTH_TOKEN}
 
+
 def query(payload):
     response = requests.post(API_URL, headers=headers, json=payload)
+    print("query res:" + response.json())
     return response.json()
 
 @csrf_exempt
 def callback(request):
+
 
     if request.method == 'POST':
         signature = request.META['HTTP_X_LINE_SIGNATURE']
@@ -43,11 +45,11 @@ def callback(request):
                 question = event.message.text
                 output = query({"inputs": question})
                 df = pd.DataFrame(output[0])
-                # df
-                ans = df[df.score == df.score.max()].label.to_string(index=False)
+                answer = df[df.score == df.score.max()].label.to_string(index=False)
+                replay_msg = f"你好😊\n關於您的提問，太Q已為您查詢到服務的局處💪💪\n歡迎聯繫「{answer}」，由專人來為您解答😀\n還有其他可以協助您的地方嗎？\n請將問題輸入對話框👇\n太Q將為您查詢服務的局處唷😃"
                 line_bot_api.reply_message(
                     event.reply_token,
-                   TextSendMessage(text=ans)
+                   TextSendMessage(text=replay_msg)
                    # TextSendMessage(text = event.message.text)
                 )
         return HttpResponse()
