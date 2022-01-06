@@ -21,7 +21,8 @@ headers = {"Authorization": settings.AUTH_TOKEN}
 
 def query(payload):
     response = requests.post(API_URL, headers=headers, json=payload)
-    print("query res:" + response.json())
+    print("query res:")
+    print(response)
     return response.json()
 
 @csrf_exempt
