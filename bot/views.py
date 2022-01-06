@@ -21,13 +21,21 @@ headers = {"Authorization": settings.AUTH_TOKEN}
 
 
 def query(payload):
-    s = requests.Session()
-    s.mount('https://', HTTPAdapter(max_retries=Retry(total=5, method_whitelist=frozenset(['GET', 'POST']))))
-    response = s.post(API_URL, headers=headers, json=payload,)
+    retry_strategy = Retry(
+        total=3,
+        status_forcelist=[429, 500, 502, 503, 504],
+        method_whitelist=["HEAD", "GET", "OPTIONS"]
+    )
+    adapter = HTTPAdapter(max_retries=retry_strategy)
+    http = requests.Session()
+    http.mount("https://", adapter)
+    http.mount("http://", adapter)
+
+    response = http.post(API_URL, headers=headers, json=payload,)
 
     # response = requests.post(API_URL, headers=headers, json=payload, timeout=20)
-    # print("query res:")
-    # print(response)
+    print("query res:")
+    print(response)
     # print(response.json())
     return response.json()
 
