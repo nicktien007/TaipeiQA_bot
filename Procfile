@@ -1,1 +1,1 @@
-web: gunicorn taipeiqa_bot.wsgi
+web: gunicorn taipeiqa_bot.wsgi --timeout 60 --max-requests 1200
