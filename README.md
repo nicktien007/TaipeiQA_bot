@@ -8,7 +8,7 @@ https://huggingface.co/nicktien/TaipeiQA_v1
 
 > 問一個問題，告訴你應該去哪個單位處理這些問題
 
-
+![img](https://raw.githubusercontent.com/nicktien007/Nick.IMG_01/main/img/75SK5bfffPDQvzbEg05h2iF0UixCHNfoCHzPDInSccjsSOzyzkLxHXDSXLKhnGgkImrkwnrzt_HJaEb19g7bw5d-aT8ovA3cURiBjNmzC_CmFKZjrs-zc6QFZspIlx2Ayn_Zz5NujorJ.png)
 
 Q：1張卡片可以借用幾台YouBike？
 
