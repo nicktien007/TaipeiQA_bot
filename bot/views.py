@@ -41,7 +41,7 @@ def query(payload):
     # print("query res:")
     # print(response)
     # print(response.json())
-    return response.status_code, response.json()
+    return (response.status_code, response.json())
 
 
 @csrf_exempt
@@ -64,7 +64,7 @@ def callback(request):
                 output = query({"inputs": question})
 
                 if output[0] != 200:
-                    replay_msg = f"您好😊\n歡迎使用Taipei QA 👋\nOhoh！小幫手太Q似乎睡著了呢💤\n請稍等20秒後再將問題輸入對話框👇\n太Q將立即為您查詢服務的局處唷😃"
+                    replay_msg = f"您好😊\n歡迎使用Taipei QA 👋\nOhoh！小幫手太Q似乎睡著了呢💤\n請稍等20秒後將問題輸入對話框👇\n太Q將立即為您查詢服務的局處唷😃"
                 else:
                     df = pd.DataFrame(output[1])
                     answer = df[df.score == df.score.max()].label.to_string(index=False)
