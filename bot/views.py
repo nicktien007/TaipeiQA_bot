@@ -67,7 +67,6 @@ def callback(request):
                     replay_msg = f"您好😊\n歡迎使用Taipei QA 👋\nOhoh！小幫手太Q似乎睡著了呢💤\n請稍等20秒後將問題輸入對話框👇\n太Q將立即為您查詢服務的局處唷😃"
                 else:
                     df = pd.DataFrame(output[1][0])
-                    print(df)
                     answer = df[df.score == df.score.max()].label.to_string(index=False)
                     replay_msg = f"你好😊\n關於您的提問，太Q已為您查詢到服務的局處💪💪\n歡迎聯繫「{answer}」，由專人來為您解答😀\n還有其他可以協助您的地方嗎？\n請將問題輸入對話框👇\n太Q將為您查詢服務的局處唷😃"
 
