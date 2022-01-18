@@ -1,5 +1,22 @@
-# TaipeiQA_Line bot
-TaipeiQA_bot
+# 台北QA Line bot
+
+[投影片](https://docs.google.com/presentation/d/1hdI8dChMhUInzIPMmNeYSKldH5WrfXYl1RhpqKZeyM8/edit?usp=sharing)
+
+[Dataset Link](https://github.com/p208p2002/taipei-QA-BERT/blob/master/Taipei_QA_new.txt)
+
+[Train Model Colab Link](https://colab.research.google.com/drive/1PvUlWD5Evs1VlNVLh0M2XEKNvSNvgRzS?usp=sharing)
+
+
+
+**成員貢獻度**
+
+| 學號       | 姓名   | 百分分 |
+| ---------- | ------ | ------ |
+| 5109056005 | 陳苡嵐 | 40%    |
+| 5109056006 | 劉建德 | 20%    |
+| 5109056024 | 田正雨 | 40%    |
+
+## introduction
 
 該LINE BOT 調用finetune的 TaipeiQA Model API 進行 QA問答
 https://huggingface.co/nicktien/TaipeiQA_v1
@@ -20,6 +37,54 @@ A：臺北市政府交通局
 
 
 
+
+
+## Steps
+
+### Step #1 Train Model
+
+[Dataset](https://github.com/p208p2002/taipei-QA-BERT/blob/master/Taipei_QA_new.txt)
+
+[Train Model Colab 連結](https://colab.research.google.com/drive/1PvUlWD5Evs1VlNVLh0M2XEKNvSNvgRzS?usp=sharing)
+
+
+
+### Step #2 Model 上傳 Hugging face
+
+https://huggingface.co/nicktien/TaipeiQA_v1
+
+![image-20220118220921338](https://raw.githubusercontent.com/nicktien007/Nick.IMG_01/main/img/image-20220118220921338.png)
+
+
+
+### Step #3 Git clone TaipeiQA_bot
+
+```shell
+git clone https://github.com/nicktien007/TaipeiQA_bot.git
+```
+
+
+
+佈署到[Heroku](https://dashboard.heroku.com/apps/taipeiqa-bot)
+
+![image-20220118220935791](https://raw.githubusercontent.com/nicktien007/Nick.IMG_01/main/img/image-20220118220935791.png)
+
+### Step #4 申請Line BOT
+
+[LINE DEVELOPER PAGE](https://developers.line.biz/en/)
+
+
+
+![image-20220118221042448](https://raw.githubusercontent.com/nicktien007/Nick.IMG_01/main/img/image-20220118221042448.png)
+
+## Video
+
+[![](https://raw.githubusercontent.com/nicktien007/Nick.IMG_01/main/img/image-20220118215200605.png)](https://www.youtube.com/watch?v=Jq16t74LAwc "")
+
 ## ref
 
 - https://bit.ly/3ePFaA7
+
+- https://bit.ly/3pVpGkt
+- https://bit.ly/335kjq8
+- https://bit.ly/3zrCZfA
