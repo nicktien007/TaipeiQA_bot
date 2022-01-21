@@ -7,15 +7,6 @@
 [Train Model Colab Link](https://colab.research.google.com/drive/1PvUlWD5Evs1VlNVLh0M2XEKNvSNvgRzS?usp=sharing)
 
 
-
-**成員貢獻度**
-
-| 學號       | 姓名   | 百分比 |
-| ---------- | ------ | ------ |
-| 5109056005 | 陳苡嵐 | 40%    |
-| 5109056006 | 劉建德 | 20%    |
-| 5109056024 | 田正雨 | 40%    |
-
 ## introduction
 
 該LINE BOT 調用finetune的 TaipeiQA Model API 進行 QA問答
